@@ -88,7 +88,6 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
         returnedImage = pickedFile;
       });
     }
-    print(returnedImage!.path);
   }
 
 

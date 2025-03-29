@@ -20,9 +20,6 @@ class CustomContactView extends StatefulWidget {
     required this.number,
   }) : id = _idCounter++;
 
-  getter() {
-    _idCounter--;
-  }
 
   @override
   State<CustomContactView> createState() => _CustomContactViewState();
@@ -33,13 +30,13 @@ class _CustomContactViewState extends State<CustomContactView> {
     return Icon(value, color: color ?? AppColors.darkBlue);
   }
 
-  Widget _displayText(String value) {
+  Widget _displayText(String value,{dynamic fontSize = 8}) {
     return Text(
       value,
       style: GoogleFonts.inter(
         color: AppColors.darkBlue,
         fontWeight: FontWeight.w500,
-        fontSize: 8,
+        fontSize: fontSize.toDouble(),
       ),
     );
   }
@@ -65,7 +62,7 @@ class _CustomContactViewState extends State<CustomContactView> {
               color: AppColors.white,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: _displayText(widget.name),
+            child: _displayText(widget.name,fontSize: 14),
           ),
         ),
         Container(
